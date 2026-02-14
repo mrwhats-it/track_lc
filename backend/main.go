@@ -42,10 +42,25 @@ func main() {
 	createTables()
 	startScheduler()
 
-	http.HandleFunc("/history", historyHandler)
+	http.HandleFunc("/history", withCORS(historyHandler))
 
 	log.Println("Server running on :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func withCORS(h http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+		if r.Method == "OPTIONS" {
+			w.WriteHeader(http.StatusOK)
+			return
+		}
+
+		h(w, r)
+	}
 }
 
 func createTables() {
@@ -69,7 +84,7 @@ func startScheduler() {
 	c := cron.New()
 
 	// Runs once every day at midnight
-	c.AddFunc("*/5 * * * *", func() {
+	c.AddFunc("* */2 * * *", func() {
 		log.Println("Daily update running...")
 		updateAllUsers()
 	})
