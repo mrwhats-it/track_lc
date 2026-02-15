@@ -113,5 +113,5 @@ func main() {
 	}
 
 	output, _ := json.MarshalIndent(data, "", "  ")
-	os.WriteFile("data.json", output, 0644)
+	os.WriteFile("/frontend/public/data.json", output, 0644)
 }
