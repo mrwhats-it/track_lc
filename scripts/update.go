@@ -82,8 +82,10 @@ func fetchUser(username string) (int, error) {
 	return total, nil
 }
 
+const dataPath = "frontend/public/data.json"
+
 func main() {
-	file, err := os.ReadFile("frontend/public/data.json")
+	file, err := os.ReadFile(dataPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -113,5 +115,5 @@ func main() {
 	}
 
 	output, _ := json.MarshalIndent(data, "", "  ")
-	os.WriteFile("/frontend/public/data.json", output, 0644)
+	os.WriteFile(dataPath, output, 0644)
 }
