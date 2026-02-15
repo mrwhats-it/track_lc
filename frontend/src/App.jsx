@@ -27,7 +27,7 @@ function App() {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/history")
+    fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
         const vibrantColors = [
