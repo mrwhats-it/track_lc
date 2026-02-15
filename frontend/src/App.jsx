@@ -75,11 +75,13 @@ function App() {
     scales: {
       x: {
         type: "time",
-        time: { unit: "month" },
+        title: { display: true, text: "Time", color: "#c9d1d9" },
+        time: { unit: "day" },
         ticks: { color: "#8b949e" },
         grid: { color: "rgba(255,255,255,0.06)" },
       },
       y: {
+        title: { display: true, text: "Total Solved", color: "#c9d1d9" },
         ticks: { color: "#8b949e", precision: 0 },
         grid: { color: "rgba(255,255,255,0.06)" },
       },
