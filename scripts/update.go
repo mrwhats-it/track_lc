@@ -111,6 +111,14 @@ func main() {
 			"total":     total,
 		}
 
+		lastTotal, ok := data[user][len(data[user])-1]["total"].(float64)
+		if !ok {
+			data[user] = append(data[user], entry)
+			continue
+		}
+		if int(lastTotal) == entry["total"] {
+			continue
+		}
 		data[user] = append(data[user], entry)
 	}
 
