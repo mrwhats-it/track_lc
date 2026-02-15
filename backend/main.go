@@ -14,7 +14,8 @@ import (
 )
 
 var usernames = []string{
-	"mathewka", // replace
+	"mathewka",
+	"Krish06m",
 }
 
 var db *sql.DB

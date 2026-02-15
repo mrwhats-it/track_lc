@@ -88,7 +88,7 @@ function App() {
 
   return (
     <div className="page">
-      <div className="title">LeetCode Progress Tracker</div>
+      <div className="title">LeetCode Progress</div>
       <div className="card">
         <div className="chart-container">
           <Line data={chartData} options={options} />
