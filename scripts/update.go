@@ -12,7 +12,9 @@ import (
 
 var usernames = []string{
 	"mathewka", 
-	
+	"Krish06m",
+	"Mann_Mehta",
+
 }
 
 type LeetCodeResponse struct {
