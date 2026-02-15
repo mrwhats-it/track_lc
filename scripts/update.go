@@ -83,7 +83,7 @@ func fetchUser(username string) (int, error) {
 }
 
 func main() {
-	file, err := os.ReadFile("data.json")
+	file, err := os.ReadFile("frontend/public/data.json")
 	if err != nil {
 		log.Fatal(err)
 	}
