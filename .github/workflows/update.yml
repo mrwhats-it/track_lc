@@ -2,7 +2,7 @@ name: Update LeetCode Data
 
 on:
   schedule:
-    - cron: "0 * * * *" # every 1 hour
+    - cron: "*/30 * * * *" # every 1 hour
   workflow_dispatch:
 
 jobs:
