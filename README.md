@@ -26,6 +26,6 @@ Github action schedules a script run at specified time duration(eg every 30 mins
    | Deploy log visibility | Logs are public              |
    | Build status          | Active                       |
 
-7. Enjoy
+7. Do leetcode questions :)
 
 this project was inspired from [anga's lc tracker](https://battle.anga.codes/)
