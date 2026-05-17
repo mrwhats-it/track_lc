@@ -2,11 +2,11 @@
 
 To track leetcode qs solved amongst peers.
 
-## how is works?
+## how it works
 
 Github action schedules a script run at specified time duration(eg every 30 mins). The script pings lc api for total qs solved for each user and updates a json file containing usernames, questions solved and timestamp.
 
-## wanna host it yourself?
+## Want to host it yourself?
 
 1. fork the repo and create local clone
 2. change usernames in scripts/update.go
